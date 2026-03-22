@@ -33,21 +33,21 @@ const TradingChart = () => {
       width: chartContainerRef.current.clientWidth || 600,
       height: chartContainerRef.current.clientHeight || 300,
       layout: {
-        background: { type: 'solid', color: '#161A1E' },
+        background: { type: 'solid', color: '#000000' },
         textColor: '#848E9C',
       },
       grid: {
-        vertLines: { color: '#2B3139', style: 1 },
-        horzLines: { color: '#2B3139', style: 1 },
+        vertLines: { color: '#1A1A1A', style: 1 },
+        horzLines: { color: '#1A1A1A', style: 1 },
       },
       crosshair: {
         mode: CrosshairMode.Normal,
       },
       rightPriceScale: {
-        borderColor: '#2B3139',
+        borderColor: '#1A1A1A',
       },
       timeScale: {
-        borderColor: '#2B3139',
+        borderColor: '#1A1A1A',
         timeVisible: true,
       },
     });

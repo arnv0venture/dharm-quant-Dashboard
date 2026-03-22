@@ -1,9 +1,9 @@
 :root {
   /* color palette based on Binance dark theme */
-  --bg-dark: #0B0E11;
-  --bg-panel: #181A20;
-  --bg-hover: #2B3139;
-  --border-color: #2B3139;
+  --bg-dark: #000000;
+  --bg-panel: #000000;
+  --bg-hover: #1A1A1A;
+  --border-color: #1A1A1A;
   
   --text-primary: #EAECEF;
   --text-secondary: #848E9C;
