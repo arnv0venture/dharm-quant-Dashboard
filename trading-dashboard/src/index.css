@@ -1,0 +1,110 @@
+:root {
+  /* color palette based on Binance dark theme */
+  --bg-dark: #0B0E11;
+  --bg-panel: #181A20;
+  --bg-hover: #2B3139;
+  --border-color: #2B3139;
+  
+  --text-primary: #EAECEF;
+  --text-secondary: #848E9C;
+  --text-muted: #5E6673;
+  
+  --color-buy: #0ECB81;
+  --color-buy-hover: #10D588;
+  --color-sell: #F6465D;
+  --color-sell-hover: #FC4F66;
+  
+  --color-accent: #FCD535;
+  --color-accent-hover: #F0C419;
+
+  --font-family: 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: 13px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden; /* Prevent body scroll, layout handles internal scroll */
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-hover);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Utility classes */
+.text-buy { color: var(--color-buy); }
+.text-sell { color: var(--color-sell); }
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-accent { color: var(--color-accent); }
+
+.bg-buy { background-color: var(--color-buy); }
+.bg-sell { background-color: var(--color-sell); }
+
+/* Tabular numbers for price displays */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Button Reset */
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Main Layout Grid */
+.dashboard-layout {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 320px 1fr 300px;
+  grid-template-areas:
+    "header header header"
+    "orderbook centerpanel rightpanel";
+  gap: 1px;
+  background-color: var(--border-color); /* The gaps will act as borders */
+}
+
+.panel {
+  background-color: var(--bg-panel);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header-area { grid-area: header; }
+.orderbook-area { grid-area: orderbook; }
+.rightpanel-area { grid-area: rightpanel; }
+
+.centerpanel-area {
+  grid-area: centerpanel;
+  display: grid;
+  grid-template-rows: 1fr 350px; /* Chart then Order Entry below */
+  gap: 1px;
+  background-color: var(--border-color);
+}
